@@ -2,7 +2,7 @@ CXXFLAGS += -O3 -std=c++14 -Wall -Wextra -pedantic-errors
 
 all: build/main
 
-build/main: build/main.o build/util.o build/neuron.o build/net.o
+build/main: build/main.o build/util.o build/neuron.o build/net.o build/journey.o build/environment.o
 	$(CXX) $(CXXFLAGS) -o build/main build/*.o
 
 build/main.o: src/main.cpp
@@ -16,6 +16,12 @@ build/neuron.o: src/neuron.cpp
 
 build/net.o: src/net.cpp
 	$(CXX) $(CXXFLAGS) -c src/net.cpp -o build/net.o
+
+build/journey.o: src/journey.cpp
+	$(CXX) $(CXXFLAGS) -c src/journey.cpp -o build/journey.o
+
+build/environment.o: src/environment.cpp
+	$(CXX) $(CXXFLAGS) -c src/environment.cpp -o build/environment.o
 
 clean:
 	$(RM) build/*.o build/main

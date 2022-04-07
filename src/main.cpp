@@ -4,6 +4,9 @@
 #include "../third-party-code/fitness_type.h"
 #include "net.h"
 
+#include "journey.h"
+#include "environment.h"
+
 using namespace std;
 using namespace BRKGA;
 unsigned int size_chromosome(unsigned int nInputs, unsigned int nHiddenLayers, unsigned int nHiddenNeurons, unsigned int nOutputs){
@@ -52,15 +55,22 @@ fitness_t decode(Chromosome *cromosome, unsigned int nInputs, unsigned int nHidd
     fitness_t fitness = 0;
     Net net(nInputs, nHiddenLayers, nHiddenNeurons, nOutputs);    
     net.parse_chromosome(cromosome);
-    
+    //TODO: implementar o objeto journey
     return fitness;
 }
 int main() {
+    /*
     Chromosome chromosome;
     read_chromosome(&chromosome, "rede.txt");
     //print_chromosome(chromosome);
     fitness_t fitness = decode(&chromosome, 2, 4, 4, 2);
     std::cout << "Fitness: " << fitness << std::endl;
+    */
+    
+    //Journey journey = Journey();
+
+    Environment environment = Environment("mapa.txt");
+    environment.printMapa();
     return 0;
 }
 
