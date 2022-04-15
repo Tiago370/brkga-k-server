@@ -67,7 +67,7 @@ namespace BRKGA {
  *      tuples with fundamental types, you must also provide two const template
  *      expressions #FITNESS_T_MIN and #FITNESS_T_MAX.
  */
-typedef double fitness_t;
+typedef long double fitness_t;
 
 namespace { // Hide from external usage.
 /**

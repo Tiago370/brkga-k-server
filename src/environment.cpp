@@ -100,6 +100,16 @@ double Environment::custo(unsigned int node1, unsigned int node2){
     double y1 = nodes[node1].second;
     double x2 = nodes[node2].first;
     double y2 = nodes[node2].second;
-    cout << "Calculando custo entre (" << x1 << ", " << y1 << ") e (" << x2 << ", " << y2 << "): " << sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)) << endl;
+    //cout << "Calculando custo entre (" << x1 << ", " << y1 << ") e (" << x2 << ", " << y2 << "): " << sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)) << endl;
     return sqrt(pow(x1-x2, 2) + pow(y1-y2, 2));
+}
+vector<double> Environment::getCoord(unsigned int requisition){
+    vector<double> coord;
+    for(unsigned int i = 0; i < kServes; i++){
+        coord.push_back(nodes[k_local_fixo[i]].first);
+        coord.push_back(nodes[k_local_fixo[i]].second);
+    }
+    coord.push_back(nodes[requisition].first);
+    coord.push_back(nodes[requisition].second);
+    return coord;
 }

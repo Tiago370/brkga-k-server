@@ -329,9 +329,9 @@ void Net::parse_chromosome(Chromosome *cromosome){
 	for(unsigned int i = 0; i < nHiddenNeurons; i++){
 		// Para cada peso do neuronio
 		// Passar o bias
-		layers[0][i].setBias(cromosome->at(chromosome_index++));
+		layers[0][i].setBias(cromosome->at(chromosome_index++)*2-1);
 		for(unsigned int j = 0; j < nInputs; j++){
-			layers[0][i].getWeights()->at(j) = cromosome->at(chromosome_index++);
+			layers[0][i].getWeights()->at(j) = cromosome->at(chromosome_index++)*2-1;
 		}
 	}
 	
@@ -342,9 +342,9 @@ void Net::parse_chromosome(Chromosome *cromosome){
 		for(unsigned int j = 0; j < nHiddenNeurons; j++){
 			// Para cada peso do neuronio
 			// Passar o bias
-			layers[i][j].setBias(cromosome->at(chromosome_index++));
+			layers[i][j].setBias(cromosome->at(chromosome_index++)*2-1);
 			for(unsigned int k = 0; k < nHiddenNeurons; k++){
-				layers[i][j].getWeights()->at(k) = cromosome->at(chromosome_index++);
+				layers[i][j].getWeights()->at(k) = cromosome->at(chromosome_index++)*2-1;
 			}
 		}
 	}
@@ -353,9 +353,9 @@ void Net::parse_chromosome(Chromosome *cromosome){
 	for(unsigned int i = 0; i < nOutput; i++){
 		// Para cada peso do neuronio
 		// Passar o bias
-		layers[nHiddenLayers][i].setBias(cromosome->at(chromosome_index++));
+		layers[nHiddenLayers][i].setBias(cromosome->at(chromosome_index++)*2-1);
 		for(unsigned int j = 0; j < nHiddenNeurons; j++){
-			layers[nHiddenLayers][i].getWeights()->at(j) = cromosome->at(chromosome_index++);
+			layers[nHiddenLayers][i].getWeights()->at(j) = cromosome->at(chromosome_index++)*2-1;
 		}
 	}
 }

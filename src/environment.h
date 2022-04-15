@@ -21,6 +21,7 @@ public:
 	unsigned int closest_server(unsigned int node);
 	unsigned int getKServes();
 	void printMapa();
+	vector <double> getCoord(unsigned int requisition); // Retorna as coordenadas dos servidres e as cordenadas a requisição.
     
 private:
 	unsigned int nNodes;
